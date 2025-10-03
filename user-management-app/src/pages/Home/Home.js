@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import ListUsers from "../../components/ListUsers";
 import SearchBar from "../../components/SearchBar";
 import Navbar from "../../components/Navbar";
+import styles from "./Home.module.css";
 
 function Home() {
   const [users, setUsers] = useState([]);
@@ -25,10 +26,12 @@ function Home() {
   );
 
   return (
-    <div>
+    <div className={styles.home}>
       <Navbar />
-      <SearchBar onSearch={setSearchTerm} />
-      <ListUsers users={filteredUsers} />
+      <div className={styles.content}>
+        <SearchBar onSearch={setSearchTerm} />
+        <ListUsers users={filteredUsers} />
+      </div>
     </div>
   );
 }
