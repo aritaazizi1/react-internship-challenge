@@ -3,7 +3,7 @@ import { Input } from "antd";
 
 const { Search } = Input;
 
-function SearchBar() {
+function SearchBar({ onSearch }) {
   return (
     <div
       style={{
@@ -12,7 +12,11 @@ function SearchBar() {
         margin: "25px 50px 0 0",
       }}
     >
-      <Search placeholder="Search by name or email" style={{ width: 250 }} />
+      <Search
+        placeholder="Search by name or email..."
+        onChange={(e) => onSearch(e.target.value)}
+        style={{ width: 250 }}
+      />
     </div>
   );
 }
