@@ -3,6 +3,13 @@ import { HomeOutlined } from "@ant-design/icons";
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
+  const items = [
+    {
+      label: <NavLink to="/home">Home</NavLink>,
+      key: "/home",
+      icon: <HomeOutlined />,
+    },
+  ];
   return (
     <div>
       <Menu
@@ -13,12 +20,8 @@ function Navbar() {
           paddingTop: 20,
         }}
         mode="inline"
-      >
-        <Menu.Item key="home" icon={<HomeOutlined />}>
-          <NavLink to="/home" />
-          Home
-        </Menu.Item>
-      </Menu>
+        items={items}
+      />
     </div>
   );
 }

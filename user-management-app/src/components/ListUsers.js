@@ -5,7 +5,6 @@ const { Column } = Table;
 
 function ListUsers({ users }) {
   const navigate = useNavigate();
-
   return (
     <>
       <Table
@@ -25,14 +24,12 @@ function ListUsers({ users }) {
         <Column
           title="E-mail"
           dataIndex="email"
-          key="email"
           render={(text, record) => <span>{record.email}</span>}
         />
         <Column
           title="Company"
           dataIndex="company"
-          key="company"
-          render={(text, record) => <span>{record.company.name}</span>}
+          render={(text, record) => <span>{record.company?.name}</span>}
         />
       </Table>
     </>
